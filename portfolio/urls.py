@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 import jobs.views
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url(r'^', jobs.views.home, name='home'),
-    url('blog/', include('blog.urls')),
+    url('admin', admin.site.urls),
+    url(r'^$', jobs.views.home, name='home'),
+    url('blog', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
